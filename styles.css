@@ -5,20 +5,21 @@
 
 #menu {
     background-color: #D84282;
-    position: relative;
-    width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    width: var(--menu-bar-width);
+    display: block;
+    position: relative;
+    transition: all 900ms ease-in-out;
 }
 
 #menu::before,
 #menu::after {
     background-color: #D84282;
-    display: block;
-    content: "";
-    width: var(--menu-bar-width);
     height: var(--menu-bar-height);
+    width: var(--menu-bar-width);
     position: absolute;
+    content: "";
+    transition: 900ms ease;
 }
 
 #menu::before {
@@ -31,3 +32,26 @@
     top: 20px;
 }
 
+#container {
+    /*border: red solid 2px;*/
+    height: 50px;
+    width: var(--menu-bar-width);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+#container:hover #menu {
+    background-color: transparent;
+}
+
+#container:hover #menu::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#container:hover #menu::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
